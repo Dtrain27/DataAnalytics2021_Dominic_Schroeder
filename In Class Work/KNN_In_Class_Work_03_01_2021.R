@@ -26,7 +26,7 @@ var(Caravan[,3]) # Variance of the 3rd column is 0.6238
 # We will do that for all the columns except the "Purchase" variable which we are going predict.
 purchase <- Caravan[,86] # you can write the same as 
 
-# purchase <-Caravan[,'Purchase'] with the column name, we use the column number 86 for the simplcity.
+# purchase <-Caravan[,'Purchase'] with the column name, we use the column number 86 for the simplicity.
 purchase
 
 # Now we want to Standardize the columns except the 86th column
