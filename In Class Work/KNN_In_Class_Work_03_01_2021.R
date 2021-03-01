@@ -2,6 +2,9 @@ library(ISLR) # you need to install the ISLR package first
 library(ggplot2)
 # Caravan dataset is about the insurance
 library(class)
+
+PREDICTOR_COL_IDX <- 86
+
 head(Caravan)
 str(Caravan)
 
@@ -24,13 +27,14 @@ var(Caravan[,3]) # Variance of the 3rd column is 0.6238
 # You can see that the variances are different for each of the column variables, 1st one is 165.03 and 2nd one is 0.16
 # and there is a huge difference, because of that we want to standardize the variables. 
 # We will do that for all the columns except the "Purchase" variable which we are going predict.
-purchase <- Caravan[,86] # you can write the same as 
+purchase <- Caravan[,PREDICTOR_COL_IDX]
 
-# purchase <-Caravan[,'Purchase'] with the column name, we use the column number 86 for the simplicity.
+# purchase <-Caravan[,'Purchase'] with the column name
 purchase
 
 # Now we want to Standardize the columns except the 86th column
-StandardizedCaravan <- scale(Caravan[,-86]) # when we use -86 it will not include the 86th column which is the value we wish to analyze.
+# when we use -86 it will not include the 86th column which is the value we wish to analyze.
+StandardizedCaravan <- scale(Caravan[,-PREDICTOR_COL_IDX])
 var(StandardizedCaravan[,1])
 var(StandardizedCaravan[,2])
 var(StandardizedCaravan[,3])
