@@ -1,5 +1,4 @@
 # Dplyr for Data Manipulating
-# Tidyr for Data Cleaning
 
 # Dplyr 
 install.packages('dplyr')
@@ -7,6 +6,7 @@ install.packages('nycflights13')
 
 library(dplyr)
 library(nycflights13)
+
 head(flights)
 summary(flights)
 
@@ -66,8 +66,6 @@ sample_frac(flights, 0.5)
 
 # dbl stands for doubles, or real numbers.
 # dttm stands for date-times (a date + a time).
-
-library(dplyr)
 df_mtcars <- mtcars
 head(df_mtcars)
 
@@ -89,11 +87,6 @@ a1 <- filter(df_mtcars, mpg >20)
 a2 <- sample_n(a1, 5) # getting a random sample of 5
 results_mpg_des <- arrange(a2, desc(mpg))
 results_mpg_des
-
-# instead of using the multiple assignments, you can use the Pipe Operator to 
-# do the above in a single line.
-
-library(dplyr) # pipe operator is a part of dplyr library.
 
 # You can do the above using the Pipe Operator %>%
 # Example:  dataFrame %>% operation1 %>% operation2 %>% operation3
