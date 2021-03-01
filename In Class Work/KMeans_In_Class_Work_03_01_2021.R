@@ -24,4 +24,3 @@ table(irisClusters$cluster,iris$Species)
 
 # plotting the clusters
 clusplot(iris,irisClusters$cluster, color = TRUE, shade = TRUE, labels = 0, lines = 0)
-
