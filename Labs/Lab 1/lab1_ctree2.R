@@ -3,4 +3,4 @@ require(party)
 swiss_ctree <- ctree(Fertility ~ Agriculture + Education + Catholic, data = swiss)
 plot(swiss_ctree)
 
-
+help(ctree)
