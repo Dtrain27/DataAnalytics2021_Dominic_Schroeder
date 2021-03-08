@@ -10,6 +10,12 @@ minprice<-10000
 bronx1<-bronx1[which(bronx1$SALE.PRICE>=minprice),]
 nval<-dim(bronx1)[1]
 
+if (FALSE) {
+  "
+  Pretty sure this code doesn't work as duplicates is not defined or delcared anywhere
+  "
+}
+
 bronx1$ADDRESSONLY<- gsub("[,][[:print:]]*","",gsub("[ ]+","",trim(bronx1$ADDRESS))) bronxadd<-unique(data.frame(bronx1$ADDRESSONLY, bronx1$ZIP.CODE,stringsAsFactors=FALSE)) names(bronxadd)<-c("ADDRESSONLY","ZIP.CODE") bronxadd<-bronxadd[order(bronxadd$ADDRESSONLY),] duplicates<-duplicated(bronx1$ADDRESSONLY)
 
 for(i in 1:2345) {

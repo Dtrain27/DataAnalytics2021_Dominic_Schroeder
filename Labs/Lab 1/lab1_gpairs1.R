@@ -1,3 +1,5 @@
+install.packages("gpairs")
+library(gpairs)
 allexamples <- FALSE
 
 y <- data.frame(A=c(rep("red", 100), rep("blue", 100)),
