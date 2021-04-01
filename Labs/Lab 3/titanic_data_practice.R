@@ -22,5 +22,7 @@ matrix
 cluster <- hclust(matrix)
 plot(cluster)
 
-model <- randomForest(Survived ~ ., data = titanic_train, importance = TRUE)
+titanic_train <- na.omit(titanic_train)
+model <- randomForest(as.factor(Survived) ~ ., data = titanic_train)
 model
+
