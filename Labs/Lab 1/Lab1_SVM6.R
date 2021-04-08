@@ -1,3 +1,4 @@
+library(kernlab)
 data(spam)
 
 ## create test and training set
